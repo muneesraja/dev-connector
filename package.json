@@ -1,0 +1,19 @@
+{
+  "name": "dev-conn-back",
+  "version": "1.0.0",
+  "description": "Social network for developers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muneesraja/dev-connector.git"
+  },
+  "author": "Munees Raja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muneesraja/dev-connector/issues"
+  },
+  "homepage": "https://github.com/muneesraja/dev-connector#readme"
+}
