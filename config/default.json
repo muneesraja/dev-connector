@@ -1,0 +1,6 @@
+{
+  "data": {
+    "db": "mongodb+srv://muneesraja:india123@dev-connecter.mzbqp.mongodb.net/dev-connector?retryWrites=true&w=majority",
+    "jwtSecret": "hackMeifyoucan"
+  }
+}
