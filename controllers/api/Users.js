@@ -50,13 +50,23 @@ exports.addUser = async (req, res, next) => {
     await user.save();
 
     // return JWT
-    try {
-      const token = jwt.sign(user.id, config.get("data.jwtSecret"));
-      res.status(201).json({
-        success: true,
-        token,
-      });
-    } catch (error) {}
+
+    const payload = {
+      user: {
+        id: user.id,
+      },
+    };
+    jwt.sign(
+      payload,
+      config.get("data.jwtSecret"),
+      {
+        expiresIn: 360000,
+      },
+      (err, token) => {
+        if (err) throw err;
+        res.json({ token });
+      }
+    );
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: [{ msg: "Internal Server Error" }] });

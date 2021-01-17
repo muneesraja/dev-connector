@@ -3,12 +3,13 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 const db = require("./db/db_conn");
 const userRoute = require("./routes/api/Users");
-const expressValidator = require("express-validator");
+const auth = require("./routes/api/auth");
 
 // Body parser Middleware
 
 app.use(express.json());
-// app.use(expressValidator());
+
+app.use("/api/v1/auth", auth);
 app.use("/api/v1/user", userRoute);
 
 // Initializing DB
